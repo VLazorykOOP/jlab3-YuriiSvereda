@@ -1,11 +1,11 @@
 public class Animal {
     protected int age;
     protected boolean sex;
-    protected AnimalColoring coloring;
-    protected AnimalClass animalClass;
+    protected AnimalColoring coloring = null;
+    protected AnimalClass animalClass = null;
     protected int limbsNumber;
     protected Area areaOfLiving;
-    protected Habitat habitat;
+    protected Habitat habitat = null;
     protected boolean isPredator;
     protected boolean ifCanSwim;
     private boolean isVertebrate;
@@ -20,10 +20,6 @@ public class Animal {
 
     public boolean isVertebrate() {
         return isVertebrate;
-    }
-
-    public void setVertebrate(boolean vertebrate) {
-        isVertebrate = vertebrate;
     }
 
     public boolean isPredator() {
@@ -54,8 +50,12 @@ public class Animal {
         return limbsNumber;
     }
 
-    public void setLimbsNumber(int limbsNumber) {
-        this.limbsNumber = limbsNumber;
+    public void setLimbsNumber(int limbsNumber) throws Exception {
+        if (limbsNumber >= 0) {
+            this.limbsNumber = limbsNumber;
+        } else {
+            throw new Exception("invalid input");
+        }
     }
 
     public AnimalClass getAnimalClass() {
@@ -64,6 +64,15 @@ public class Animal {
 
     public void setAnimalClass(AnimalClass animalClass) {
         this.animalClass = animalClass;
+        if (animalClass == AnimalClass.AMPHIBIANS ||
+                animalClass == AnimalClass.REPTILES ||
+                animalClass == AnimalClass.BIRDS ||
+                animalClass == AnimalClass.FISH ||
+                animalClass == AnimalClass.MAMMALS) {
+            this.isVertebrate = true;
+        } else {
+            this.isVertebrate = false;
+        }
     }
 
     public AnimalColoring getColoring() {
@@ -86,8 +95,12 @@ public class Animal {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAge(int age) throws Exception {
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            throw new Exception("invalid input");
+        }
     }
 
 
@@ -101,10 +114,27 @@ public class Animal {
 
 
     public void Show() {
-        System.out.println("Class" + this.animalClass.getDescription());
-        System.out.println("it live" + this.areaOfLiving.getDescription() + this.habitat.getDescription());
-        System.out.println("it has" + this.coloring.getDescription());
-        System.out.println("Number of limbs:" + this.limbsNumber);
+        System.out.print("Class: ");
+        if (this.animalClass != null) {
+            System.out.println(this.animalClass.getDescription());
+        } else {
+            System.out.println("undefined");
+        }
+        System.out.print("its place of life ");
+        if (this.areaOfLiving != null && this.habitat != null) {
+            System.out.println(this.areaOfLiving.getDescription() + this.habitat.getDescription());
+        } else if (this.areaOfLiving == null && this.habitat != null) {
+            System.out.println(this.habitat);
+        } else if (this.habitat == null && this.areaOfLiving != null) {
+            System.out.println("undefined");
+        }
+        System.out.print("it has coloring ");
+        if (this.coloring != null) {
+            System.out.println(this.coloring.getDescription());
+        } else {
+            System.out.println("undefined");
+        }
+        System.out.println("Number of limbs: " + this.limbsNumber);
         if (this.isPredator) {
             System.out.println("it eats meat");
         } else {
