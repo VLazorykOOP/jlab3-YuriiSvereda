@@ -8,10 +8,10 @@ public class Bird extends Animal {
         return maxSpeed;
     }
 
-    public void setMaxSpeed(int maxSpeed) throws Exception{
-        if(maxSpeed>=0){
+    public void setMaxSpeed(int maxSpeed) throws Exception {
+        if (maxSpeed >= 0) {
             this.maxSpeed = maxSpeed;
-        }else{
+        } else {
             throw new Exception("invalid input");
         }
     }
@@ -20,10 +20,10 @@ public class Bird extends Animal {
         return wingspan;
     }
 
-    public void setWingspan(int wingspan) throws Exception{
-        if(wingspan>=0){
+    public void setWingspan(int wingspan) throws Exception {
+        if (wingspan >= 0) {
             this.maxSpeed = wingspan;
-        }else{
+        } else {
             throw new Exception("invalid input");
         }
     }
@@ -46,11 +46,11 @@ public class Bird extends Animal {
 
     public Bird() {
         super();
-        this.animalClass=AnimalClass.BIRDS;
+        this.animalClass = AnimalClass.BIRDS;
         this.limbsNumber = 4;
-        this.maxSpeed=1;
-        this.isFlying=true;
-        this.wingspan=1;
+        this.maxSpeed = 1;
+        this.isFlying = true;
+        this.wingspan = 1;
     }
 
     @Override
@@ -64,20 +64,20 @@ public class Bird extends Animal {
     }
 
     @Override
-    public void Show(){
+    public void Show() {
         super.Show();
         System.out.print("its breed: ");
-        if(this.breed!=null){
+        if (this.breed != null) {
             System.out.println(this.breed);
-        }else{
+        } else {
             System.out.println("undefine");
         }
-        if(this.isFlying){
+        if (this.isFlying) {
             System.out.println("it can fly");
-        }else{
+        } else {
             System.out.println("it can't fly");
         }
-        System.out.println("its maximal speed: "+this.maxSpeed);
-        System.out.println("its wingspan: "+this.wingspan);
+        System.out.println("its maximal speed: " + this.maxSpeed);
+        System.out.println("its wingspan: " + this.wingspan);
     }
 }

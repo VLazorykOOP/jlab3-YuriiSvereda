@@ -64,11 +64,11 @@ public class Animal {
 
     public void setAnimalClass(AnimalClass animalClass) {
         this.animalClass = animalClass;
-        if (animalClass == AnimalClass.AMPHIBIANS ||
-                animalClass == AnimalClass.REPTILES ||
-                animalClass == AnimalClass.BIRDS ||
-                animalClass == AnimalClass.FISH ||
-                animalClass == AnimalClass.MAMMALS) {
+        if (this.animalClass == AnimalClass.AMPHIBIANS ||
+                this.animalClass == AnimalClass.REPTILES ||
+                this.animalClass == AnimalClass.BIRDS ||
+                this.animalClass == AnimalClass.FISH ||
+                this.animalClass == AnimalClass.MAMMALS) {
             this.isVertebrate = true;
         } else {
             this.isVertebrate = false;
