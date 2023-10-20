@@ -7,7 +7,7 @@ public enum MammalsOrder {
     CARNIVORES("carnivores"),
     PINNIPEDS("pinnipeds"),
     CETACEANS("cetaceans"),
-    CLOVEN_HOOFED("cloven_hoofed"),
+    CLOVEN_HOOFED("cloven-hoofed"),
     UNGULATES("ungulates"),
     PRIMATES("primates");
     private final String description;
