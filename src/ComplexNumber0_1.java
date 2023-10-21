@@ -1,17 +1,18 @@
-public class ComplexNumber0_1 implements IPair{
+public class ComplexNumber0_1 implements IPair {
     int real;
     int imagine;
+
     @Override
     public IPair add(int number) {
         ComplexNumber0_1 newNumdber = this;
-        newNumdber.real+=number;
+        newNumdber.real += number;
         return newNumdber;
     }
 
     @Override
     public IPair sub(int number) {
         ComplexNumber0_1 newNumdber = this;
-        newNumdber.real-=number;
+        newNumdber.real -= number;
         return newNumdber;
     }
 
@@ -26,8 +27,8 @@ public class ComplexNumber0_1 implements IPair{
     @Override
     public IPair dev(int number) {
         ComplexNumber0_1 newNumdber = this;
-        newNumdber.real = (int)((newNumdber.real * number) / Math.pow(number, 2));
-        newNumdber.imagine = (int)(-((0 - newNumdber.imagine * number) / (Math.pow(number, 2) )));
+        newNumdber.real = (int) ((newNumdber.real * number) / Math.pow(number, 2));
+        newNumdber.imagine = (int) (-((0 - newNumdber.imagine * number) / (Math.pow(number, 2))));
         return newNumdber;
     }
 }
