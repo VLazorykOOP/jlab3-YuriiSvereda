@@ -122,7 +122,7 @@ public class Animal {
         }
         System.out.print("its place of life ");
         if (this.areaOfLiving != null && this.habitat != null) {
-            System.out.println(this.areaOfLiving.getDescription() + this.habitat.getDescription());
+            System.out.println(this.habitat.getDescription() + " " + this.areaOfLiving.getDescription());
         } else if (this.areaOfLiving == null && this.habitat != null) {
             System.out.println(this.habitat);
         } else if (this.habitat == null && this.areaOfLiving != null) {

@@ -3,7 +3,8 @@ public enum Habitat {
     GROUND("on the ground"),
     UNDERGROUND("underground"),
     UNDERWATER("underwater"),
-    BODY("in the body of another");
+    BODY("in the body of another"),
+    HOUSE("in peopel's home");
     private final String description;
 
     Habitat(String description) {
