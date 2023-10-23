@@ -92,4 +92,31 @@ public class Tests {
             System.out.println();
         }
     }
+
+    public static void task23() {
+        ComplexNumber a = new ComplexNumber(3, 99);
+        ComplexNumber b = new ComplexNumber(3, 99);
+        System.out.println(a.add(15));
+        System.out.println(a.sub(6));
+        System.out.println(a.mult(7));
+        System.out.println(a.div(3));
+        if (a.equals(b)) {
+            System.out.println(":)");
+        } else {
+            System.out.println(":(");
+        }
+
+        Money0_1 c = new Money0_1(135, 50);
+        Money0_1 d = new Money0_1(134, 52);
+        System.out.println(c.add(64));
+        System.out.println(c.sub(34));
+        System.out.println(c.mult(2));
+        System.out.println(c.div(5));
+        if (c.equals(d)) {
+            System.out.println(":)");
+        } else {
+            System.out.println(":(");
+        }
+
+    }
 }

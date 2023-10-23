@@ -5,5 +5,5 @@ public interface IPair {
 
     IPair mult(int number);
 
-    IPair dev(int number);
+    IPair div(int number);
 }
